@@ -25,15 +25,14 @@ X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 
 # 5. Treinar Modelos
-print("Treinando KNN...")
+
 knn = KNeighborsClassifier(n_neighbors=5)
 knn.fit(X_train_scaled, y_train)
 
-print("Treinando SVM...")
+
 svm = SVC(kernel='rbf', probability=True, random_state=42)
 svm.fit(X_train_scaled, y_train)
 
-# 6. Salvar os modelos treinados e os dados de teste para usarmos no script 4
 joblib.dump(knn, "modelo_knn.pkl")
 joblib.dump(svm, "modelo_svm.pkl")
 joblib.dump(X_test_scaled, "X_test_scaled.pkl")
