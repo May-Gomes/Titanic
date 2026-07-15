@@ -1,6 +1,5 @@
 import pandas as pd
 
-# Carregamento e Exploração inicial
 df = pd.read_csv("Titanic_dataset.csv")
 
 print("Visualizando o topo:")
